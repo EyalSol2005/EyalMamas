@@ -1,6 +1,15 @@
 import math
 
 def is_sorted_polyndrom(word: str) -> bool:
+    """
+  The function checks if the given word is a sorted polyndrom
+
+  Args:
+  word (str): The word to check
+
+  Returns:
+  bool: True if sorted polyndrom, of False if isn't.
+  """
   for i in range(len(word)):  #Loop over the word
 
     char_start = word[i]
