@@ -23,7 +23,7 @@ namespace Project2048
         {
             if (Status == GameStatus.Idle)
             {
-                this.Points += this.Board.Move(direction, true);
+                this.Points += this.Board.Move(direction, true); // adding the current gained points to the overall points
             }
 
         }

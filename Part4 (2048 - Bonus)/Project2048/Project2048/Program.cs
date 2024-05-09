@@ -12,10 +12,17 @@ namespace Project2048
         {
             (int rows, int cols) = ConsoleGame.GetBoardSize();
             Game game = new Game(rows, cols);
+            PlayGame(game);
+        }
 
+        /// <summary>
+        /// The function starts the game
+        /// </summary>
+        /// <param name="game">Game to play</param>
+        public static void PlayGame(Game game)
+        {
             while (Game.Status == GameStatus.Idle)
             {
-
                 ConsoleGame.PrintBoard(game);
                 Direction direction = ConsoleGame.GetUserInput();
                 // Console.WriteLine("You chose: " + direction);
@@ -31,7 +38,7 @@ namespace Project2048
                 shiftedLeftBoard.Move(Direction.Left, false);
                 shiftedRightBoard.Move(Direction.Right, false);
 
-
+                // checking if not matter where the board gets shifted, it stays the same. Which means there is no possible move and the player has lost
                 if (Board.SameBoards(shiftedLeftBoard.Data, game.Board.Data) &&
                   Board.SameBoards(shiftedRightBoard.Data, game.Board.Data) &&
                   Board.SameBoards(shiftedDownBoard.Data, game.Board.Data) &&
@@ -45,7 +52,7 @@ namespace Project2048
 
             if (Game.Status == GameStatus.Win)
             {
-                Console.WriteLine("You win!");
+                Console.WriteLine("You won!");
             }
 
             if (Game.Status == GameStatus.Lose)

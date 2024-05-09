@@ -8,6 +8,10 @@ namespace Project2048
 {
     public static class ConsoleGame
     {
+        /// <summary>
+        /// The function prints out the board and amount of points
+        /// </summary>
+        /// <param name="game">The game that contains the board and points</param>
         public static void PrintBoard(Game game)
         {
             Console.WriteLine($"Points: ({game.Points})");
@@ -23,6 +27,10 @@ namespace Project2048
             Console.WriteLine("-----------------");
         }
 
+        /// <summary>
+        /// The function gets an input from the user and returns the chosen direction
+        /// </summary>
+        /// <returns>Direction that the user chose</returns>
         public static Direction GetUserInput()
         {
             // Console.WriteLine("Enter direction: ");
@@ -55,6 +63,10 @@ namespace Project2048
             return direction;
         }
 
+        /// <summary>
+        /// The function gets the amount of wanted rows and cols from the user (Bonus)
+        /// </summary>
+        /// <returns>amount of rows and cols</returns>
         public static (int, int) GetBoardSize()
         {
             int rows = GetNumberInput("Enter amount of rows:");
@@ -62,6 +74,11 @@ namespace Project2048
             return (rows, cols);
         }
 
+        /// <summary>
+        /// The function gets a number from the user
+        /// </summary>
+        /// <param name="message">Message to print</param>
+        /// <returns>The number the user chose</returns>
         private static int GetNumberInput(string message)
         {
             Console.WriteLine(message);
@@ -69,7 +86,7 @@ namespace Project2048
             int number;
             if (!Int32.TryParse(numberStr, out number) || number <= 0)
             {
-                Console.WriteLine("Invalid input. Only enter a positive integer.");
+                Console.WriteLine("Invalid input. Only enter a positive integer greater than one.");
 
                 return GetNumberInput(message);
             }
