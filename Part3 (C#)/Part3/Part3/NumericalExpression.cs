@@ -85,6 +85,15 @@ namespace Part3
             return this.number;
         }
 
+        /// <summary>
+        /// The function sums up all the letters needed to represent all the numbers from 0 to the given number in their word represention
+        /// </summary>
+        /// <param name="number">Number to check</param>
+        /// <param name="units">Function to handle units</param>
+        /// <param name="teens">Function to handle teens</param>
+        /// <param name="tens">Function to handle tens</param>
+        /// <param name="thousands">Array of the thousands</param>
+        /// <returns></returns>
         public static int SumLetters(long number, Func<int, string>[] units, Func<int, string>[] teens, Func<int, string>[] tens, string[] thousands)
         {
             int sum = 0;
