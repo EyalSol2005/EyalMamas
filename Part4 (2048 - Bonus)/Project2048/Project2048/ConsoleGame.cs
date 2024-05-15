@@ -17,14 +17,15 @@ namespace Project2048
             Console.WriteLine($"Points: ({game.Points})");
             for (int i = 0; i < game.Board.Data.GetLength(0); i++)
             {
-                Console.WriteLine("-----------------");
                 for (int j = 0; j < game.Board.Data.GetLength(1); j++)
                 {
-                    Console.Write($"| {game.Board.Data[i, j]} ");
+                    Console.Write($"{game.Board.Data[i, j]} ");
                 }
-                Console.WriteLine("|");
+                Console.WriteLine();
             }
-            Console.WriteLine("-----------------");
+            Console.WriteLine();
+            Console.WriteLine();
+
         }
 
         /// <summary>
@@ -84,7 +85,7 @@ namespace Project2048
             Console.WriteLine(message);
             string numberStr = Console.ReadLine();
             int number;
-            if (!Int32.TryParse(numberStr, out number) || number <= 0)
+            if (!Int32.TryParse(numberStr, out number) || number <= 1)
             {
                 Console.WriteLine("Invalid input. Only enter a positive integer greater than one.");
 

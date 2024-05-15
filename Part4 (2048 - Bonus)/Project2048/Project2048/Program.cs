@@ -52,6 +52,8 @@ namespace Project2048
 
             if (Game.Status == GameStatus.Win)
             {
+                ConsoleGame.PrintBoard(game);
+
                 Console.WriteLine("You won!");
             }
 
