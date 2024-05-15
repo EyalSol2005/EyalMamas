@@ -52,9 +52,9 @@ namespace Part3
                 Console.Write(value + ".");
             }
 
-            Console.WriteLine("\n\n------------------------\nThe English Numerical Expression (With Bonus - Using Func):");
 
             long number = 548;
+            Console.WriteLine($"\n\n------------------------\nThe English Numerical Expression of {number} (With Bonus - Using Func):");
             NumericalExpressionEnglish n1 = new NumericalExpressionEnglish(number);
             Console.WriteLine(n1);
             Console.Write($"Sum of letters from 0 to {number} is: ");
